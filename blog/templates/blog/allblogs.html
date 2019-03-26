@@ -64,7 +64,7 @@
         <h1 class="text-center m-3">Blog</h1>
         <h2>Latest Posts</h2>
         {% for blog in blogs.all %}
-        <div class="col-md-4">
+        <div class="col-md-8">
           <a href="{% url 'detail' blog.id %}"
             ><h3>{{ blog.title }}</h3></a
           >
@@ -72,13 +72,13 @@
             {{ blog.pub_date }}
           </p>
           <img
-            class="img-fluid"
+            class="img-fluid rounded"
             src="{{ blog.image.url }}"
             width="200"
             height="200"
           />
 
-          <p class="text-center">{{ blog.summary }}...</p>
+          <p class="text-center">{{ blog.summary }} ...</p>
         </div>
         {% endfor %}
         <hr />
