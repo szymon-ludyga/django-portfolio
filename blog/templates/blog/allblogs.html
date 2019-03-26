@@ -9,7 +9,6 @@
     />
     <meta name="description" content="" />
     <meta name="author" content="" />
-
     <title>Portfolio</title>
 
     <link
@@ -52,55 +51,38 @@
             <a class="nav-item nav-link" href="{% static 'wniosek.pdf' %}"
               >Resume</a
             >
-            <a class="nav-item nav-link" href="{% url 'allblogs' %}">Blog</a>
+            <a class="nav-item nav-link active" href="{% url 'allblogs' %}"
+              >Blog</a
+            >
           </div>
         </div>
       </nav>
     </header>
 
     <main role="main">
-      <section class="jumbotron text-center">
-        <div class="container">
-          <h1 class="jumbotron-heading">Hi, I'm Szymon</h1>
-          <p class="lead text-muted">
-            I make websites using various programming languages and technologies
-            :)
-          </p>
+      <div class="container">
+        <h1 class="text-center m-3">Blog</h1>
+        <h2>Latest Posts</h2>
+        {% for blog in blogs.all %}
+        <div class="col-md-4">
+          <a href="{% url 'detail' blog.id %}"
+            ><h3>{{ blog.title }}</h3></a
+          >
           <p>
-            <a
-              href="mailto:szymon.ludyga2@gmail.com"
-              class="btn btn-secondary my-2"
-              >Contact me!</a
-            >
+            {{ blog.pub_date }}
           </p>
           <img
             class="img-fluid"
-            src="{% static 'image.jpeg' %}"
+            src="{{ blog.image.url }}"
             width="200"
             height="200"
           />
-        </div>
-      </section>
 
-      <div class="album py-5 bg-light">
-        <div class="container">
-          <div class="row">
-            {% for job in jobs.all %}
-            <div class="col-md-4">
-              <div class="card mb-4 box-shadow">
-                <img class="card-img-top" src="{{ job.image.url }}" />
-                <div class="card-body">
-                  <p class="card-text">
-                    {{ job.summary }}
-                  </p>
-                </div>
-              </div>
-            </div>
-            {% endfor %}
-          </div>
+          <p class="text-center">{{ blog.summary }}...</p>
         </div>
+        {% endfor %}
+        <hr />
       </div>
-      <hr />
     </main>
 
     <footer class="text-muted">
