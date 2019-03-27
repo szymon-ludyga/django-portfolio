@@ -88,11 +88,14 @@
             {% for job in jobs.all %}
             <div class="col-md-4">
               <div class="card mb-4 box-shadow">
-                <img class="card-img-top" src="{{ job.image.url }}" />
+                <img class="card-img-top" src="{{ job.image_url }}" />
                 <div class="card-body">
                   <p class="card-text">
                     {{ job.summary }}
                   </p>
+                  <a href="{{ job.github_url }}" target="_blank" class="btn btn-secondary my-2"
+                    >Check this out!</a
+                  >
                 </div>
               </div>
             </div>
