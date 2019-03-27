@@ -26,7 +26,7 @@ SECRET_KEY = '8otw51^+rj&u)r85m9ohby2$@@ckzfa(seo!-kwc8&100^m2jm'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = [ 'localhost','tranquil-river-13450.herokuapp.com']
+ALLOWED_HOSTS = [ 'localhost','portfolio-szymon.herokuapp.com']
 
 
 # Application definition
