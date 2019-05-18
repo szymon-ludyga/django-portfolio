@@ -32,6 +32,7 @@ ALLOWED_HOSTS = [ 'localhost','portfolio-szymon.herokuapp.com']
 # Application definition
 
 INSTALLED_APPS = [
+    'aboutme.apps.AboutmeConfig',
     'blog.apps.BlogConfig',
     'jobs.apps.JobsConfig',
     'django.contrib.admin',
