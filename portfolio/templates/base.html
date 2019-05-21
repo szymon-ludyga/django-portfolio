@@ -48,8 +48,14 @@
               class="nav-item nav-link"
               target="_blank"
               href="https://github.com/SzymonLudyga/"
-              >GitHub <img src="{% static 'github.png' %}" width="30" height="20" style="filter: invert(1);"></a
-            >
+              >GitHub
+              <img
+                src="{% static 'github.png' %}"
+                width="30"
+                height="20"
+                style="filter: invert(1);"
+            /></a>
+
             <a
               class="nav-item nav-link"
               target="_blank"
@@ -68,7 +74,7 @@
         </div>
       </nav>
     </header>
-    <div class="container">
+    <div class="container mt-5">
       {% block content %} {% endblock %}
     </div>
 
